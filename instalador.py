@@ -28,32 +28,26 @@ else:
 '''
 	Clona repositorio git
 '''
-git_clone = os.system("git clone https://github.com/leolegends/laravelstrap.git")
+git_clone = os.system('git clone https://github.com/leolegends/laravelstrap.git')
 
 if(git_clone == 32512):
 	print("Ops, parece que voce ainda nao instalou o git, vamos tentar instalar pra voce.")
-	os.system("apt-get install git")
-        git_clone = os.system("git clone https://github.com/leolegends/laravelstrap.git")
+os.system("apt-get install git")
+os.system("git clone https://github.com/leolegends/laravelstrap.git")
 
 print("\nAgora vou copiar os arquivos principais para seu diretorio /var/" + diretorio + " aguarde ...")
 os.system("mkdir /var/"+ diretorio + "/public/material_css")
 os.system("mkdir /var/"+ diretorio + "/public/material_js")
 print("\nCopiando CSS\n")
-os.system("cp css/* /var/" + diretorio + "/public/material_css/")
+os.system("cp laravelstrap/css/* /var/" + diretorio + "/public/material_css/")
 time.sleep(2)
 print("Copiando JS")
 time.sleep(2)
-os.system("cp js/* /var/" + diretorio + "/public/material_js/")
+os.system("cp laravelstrap/js/* /var/" + diretorio + "/public/material_js/")
 print("\nFeito... Todos arquivos copiados, so falta os layouts ...")
 os.system("mkdir /var/"+ diretorio + "/resources/views/layouts")
 print("Copiando JS")
 time.sleep(2)
-os.system("cp layouts/* /var/" + diretorio + "/resources/views/layouts/")
+os.system("cp laravelstrap/layouts/* /var/" + diretorio + "/resources/views/layouts/")
 time.sleep(2)
 print("Finalizado!")
-
-
-
-
-
-
