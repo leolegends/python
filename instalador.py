@@ -42,15 +42,25 @@ else:
 		'''
 		git_clone = os.system('git clone https://github.com/leolegends/laravelstrap.git')
 
+		if(git_clone == 32768):
+			os.system("Vamos atualizar o repo que voce ja tem baixado...")	
+			os.system("rm laravelstrap -r")
+			os.system("git clone https://github.com/leolegends/laravelstrap.git")
+
 		if(git_clone == 32512):
 			print("Ops, parece que voce ainda nao instalou o git, vamos tentar instalar pra voce.")
-		os.system("apt-get install git")
-		os.system("git clone https://github.com/leolegends/laravelstrap.git")
+			os.system("apt-get install git")
+			os.system("git clone https://github.com/leolegends/laravelstrap.git")
 
 		print("\nAgora vou copiar os arquivos principais para seu diretorio /var/" + diretorio + " aguarde ...")
-		os.system("mkdir /var/"+ diretorio + "/public/material_css")
+		comando = os.system("mkdir /var/"+ diretorio + "/public/material_css")
 		os.system("mkdir /var/"+ diretorio + "/public/material_js")
-
+		
+		if(comando == 256):
+			print("Vi aqui que voce ja tem as pastas dos assets, vou dar uma limpada ... ")
+			os.system("rm /var/" + diretorio + "/public/material_js -R")
+			os.system("rm /var/" + diretorio + "/public/material_css -R")
+			
 		print("\n")
 		print("****************************** TEMPLATE *********************************")
 		print("************************ ESCOLHA SEU TEMPLATE ****************************")
