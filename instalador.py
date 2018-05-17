@@ -15,6 +15,10 @@ print("Entre com o diretorio da sua aplicacao: \n ex: www/html/laravel")
 diretorio = input("\nDigite o diretorio /var/: ")
 
 '''
+documentacao:
+
+http://daemonite.github.io/material/docs/4.1/getting-started/introduction/
+
 	Verifica se existe o diretorio:
 '''
 
